@@ -1,27 +1,25 @@
 {
-	"name": "azure-devops",
-	"version": "0.0.1",
-	"description": "A Demo of Azure DevOps CI/CD",
-	"repository": "https://github.com/jcailan/azure-devops",
-	"license": "MIT",
+	"name": "demo",
+	"version": "1.0.0",
+	"description": "A simple CAP project.",
+	"repository": "<Add your repository here>",
+	"license": "UNLICENSED",
+	"private": true,
 	"dependencies": {
-		"mbt": "^1.0.0",
 		"@sap/cds": "^3",
 		"express": "^4"
 	},
 	"devDependencies": {
-		"mocha": "^5.1.1",
-		"chai": "^4.1.2",
-		"chai-http": "^4.0.0",
+		"chai": "^4.2.0",
+		"chai-http": "^4.3.0",
+		"mocha": "^7.2.0",
 		"mocha-junit-reporter": "^1.23.3",
-		"nyc": "^15.0.1",
 		"sqlite3": "^4.2.0"
 	},
 	"scripts": {
 		"test": "mocha tests/test.js --timeout 15000 --exit",
-		"test-azure": "nyc --temp-dir=./report/raw --reporter=cobertura --report-dir=./report mocha tests/*.js --reporter mocha-junit-reporter --reporter-options mochaFile=./report/test-results.xml --timeout 15000 --exit",
-		"start": "npx cds run",
-		"build": "mbt build"
+		"test-azure": "mocha tests/*.js --reporter mocha-junit-reporter --reporter-options mochaFile=./report/test-results.xml --timeout 15000 --exit",
+		"start": "npx cds run"
 	},
 	"cds": {
 		"requires": {
